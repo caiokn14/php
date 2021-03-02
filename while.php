@@ -1,9 +1,9 @@
 <?php
-$x = 1;
+$y = 1001;
 
-while($x <= 5) {
-  echo "The number is: $x <br>";
-  $x++;
+while($y <= 1000) {
+  echo "Caio";
+  $y++;
 }
 
 ?>
