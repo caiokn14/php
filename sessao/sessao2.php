@@ -1,7 +1,9 @@
 <?php
 session_start();
 
-$msg = "Sessão dois utilizando a session contador ". $_SESSION["contador"];
+$_SESSION["nome"] = "Caio";
+
+// $msg = "Sessão dois utilizando a session contador ". $_SESSION["contador"];
 ?>
 
 <html>
@@ -10,6 +12,6 @@ $msg = "Sessão dois utilizando a session contador ". $_SESSION["contador"];
         <meta charset="UTF-8">
     </head>
     <body>
-        <?php echo $msg ?>
+        <?php echo $_SESSION["nome"] ?>
     </body>
 </html>

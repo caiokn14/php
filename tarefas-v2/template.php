@@ -21,7 +21,7 @@
                 </label>
                 <label>
                     Prazo (Opcional):
-                    <input type="text name="prazo />
+                    <input type="text" name="prazo" />
                 </label>
                 <fieldset>
                     <legend>Prioridade:</legend>

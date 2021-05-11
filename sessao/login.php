@@ -1,12 +1,6 @@
 <?php
 session_start();
-
-if(isset($_SESSION["contador"])){
-    $_SESSION["contador"] += 1;
-}else{
-    $_SESSION["contador"] = 1;
-}
-$msg = "Quantidade de acesso ". $_SESSION["contador"];
+// $msg = "Sessão dois utilizando a session contador ". $_SESSION["contador"];
 ?>
 
 <html>
