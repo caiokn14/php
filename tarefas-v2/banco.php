@@ -1,12 +1,13 @@
 <?php
+// Nomes de constantes válidos
+define("BD_SERVIDOR","127.0.0.1:3306");
+define("BD_USUARIO","root");
+define("BD_SENHA","");
+define("BD_BANCO","tarefas");
 
 function gravar_tarefa($tarefa){
-    $bdServidor = '127.0.0.1:3306';
-    $bdUsuario = 'root';
-    $bdSenha = '';
-    $bdBanco = 'tarefas';
 
-    $conexao =  new mysqli($bdServidor, $bdUsuario, $bdSenha, $bdBanco);
+    $conexao = new mysqli(BD_SERVIDOR, BD_USUARIO, BD_SENHA, BD_BANCO);
 
         if($conexao->connect_error){
             echo "Problemas para conectar no banco. Verifique os dados!";
@@ -28,4 +29,21 @@ function gravar_tarefa($tarefa){
             $stmt->close();
             $conexao->close();
         }
+}
+
+function buscar_tarefas(){
+    $conexao = new mysqli(BD_SERVIDOR, BD_USUARIO, BD_SENHA, BD_BANCO);
+    $listaTarefas = array();
+
+    if($conexao->connect_error){
+        echo "Problemas para conectar no banco. Verifique os dados!";
+        $conexao->close();
+    }else{
+        $resultado = $conexao->query("SELECT * FROM tarefas");
+        while($tarefa = $resultado->fetch_array(MYSQLI_ASSOC)){
+            array_push($listaTarefas,$tarefa);
+        }
+        $conexao->close();
+    }
+    return $listaTarefas;
 }
